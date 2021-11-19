@@ -10,7 +10,7 @@ mv global.config.json miner0 && echo "config.json moved"
 
 echo "creating $GPU_COUNT_ dirs for miners"
 #генерация конфигов CLI
-echo "./miner$GPU_NUMBER_/tonlib-cuda-cli -v 3  -C ./miner$GPU_NUMBER_/global.config.json -e 'pminer start $GIVER_ADDRESS_ $USER_WALLET_ $GPU_NUMBER_ 512'" >> start_cli.sh
+echo "./miner0/tonlib-cuda-cli -v 3  -C ./miner0/global.config.json -e 'pminer start $GIVER_ADDRESS_ $USER_WALLET_ 0 512'" >> start_cli.sh
 for ((GPU_NUMBER_=1; GPU_NUMBER_< GPU_COUNT_; GPU_NUMBER_++))
 do
 	mkdir miner$GPU_NUMBER_
