@@ -1,8 +1,8 @@
 GIVER_ADDRESS_=$1
 USER_WALLET_=$2
 GPU_COUNT_=$3
-#MINER_LINK_=https://github.com/tontechio/pow-miner-gpu/releases/download/20211116-1/minertools-cuda-ubuntu-18.04-x86-64.tar.gz
-MINER_LINK_=https://github.com/tontechio/pow-miner-gpu/releases/download/20211119-4/minertools-opencl-ubuntu-18.04-x86-64.tar.gz
+MINER_LINK_=https://github.com/tontechio/pow-miner-gpu/releases/download/20211116-1/minertools-cuda-ubuntu-18.04-x86-64.tar.gz
+#MINER_LINK_=https://github.com/tontechio/pow-miner-gpu/releases/download/20211119-4/minertools-opencl-ubuntu-18.04-x86-64.tar.gz
 
 ./rm_all_miners.sh
 
