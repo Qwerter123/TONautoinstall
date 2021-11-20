@@ -24,6 +24,6 @@ do
 	cd miner$GPU_NUMBER_
 	touch start_cli.sh && echo "created"
 	chmod +777 start_cli.sh
-	echo "./miner$GPU_NUMBER_/tonlib-cuda-cli -v 3  -C ./miner$GPU_NUMBER_/global.config.json -e 'pminer start $GIVER_ADDRESS_ $USER_WALLET_
+	echo "./miner$GPU_NUMBER_/tonlib-cuda-cli -v 3  -C ./miner$GPU_NUMBER_/global.config.json -e 'pminer start $GIVER_ADDRESS_ $USER_WALLET_ $GPU_NUMBER_ 512 '" >> start_cli.sh
 	cd ../
 done
