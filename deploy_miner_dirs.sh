@@ -12,7 +12,7 @@ echo "creating $GPU_COUNT_ dirs for miners"
 #генерация конфигов CLI для 0 карты
 touch miner0/start_cli.sh
 chmod +777 miner0/start_cli.sh
-echo "./miner0/tonlib-cuda-cli -v 3  -C ./miner0/global.config.json -e 'pminer start $GIVER_ADDRESS_ $USER_WALLET_ 0 512'" >> mine
+echo "./miner0/tonlib-cuda-cli -v 3  -C ./miner0/global.config.json -e 'pminer start $GIVER_ADDRESS_ $USER_WALLET_ 0 512'" >> miner0/start_cli.sh
 
 for ((GPU_NUMBER_=1; GPU_NUMBER_< GPU_COUNT_; GPU_NUMBER_++))
 do
@@ -24,6 +24,6 @@ do
 	cd miner$GPU_NUMBER_
 	touch start_cli.sh && echo "created"
 	chmod +777 start_cli.sh
-	echo "./miner$GPU_NUMBER_/tonlib-cuda-cli -v 3  -C ./miner$GPU_NUMBER_/global.config.json -e 'pminer start $GIVER_ADDRESS_ $US
+	echo "./miner$GPU_NUMBER_/tonlib-cuda-cli -v 3  -C ./miner$GPU_NUMBER_/global.config.json -e 'pminer start $GIVER_ADDRESS_ $USER_WALLET_
 	cd ../
 done
