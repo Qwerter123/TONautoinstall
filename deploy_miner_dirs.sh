@@ -9,8 +9,11 @@ mv pow***  miner0 && echo "miner moved"&& rm -f pow*** && echo "temp miner remov
 mv global.config.json miner0 && echo "config.json moved"
 
 echo "creating $GPU_COUNT_ dirs for miners"
-#генерация конфигов CLI
-echo "./miner0/tonlib-cuda-cli -v 3  -C ./miner0/global.config.json -e 'pminer start $GIVER_ADDRESS_ $USER_WALLET_ 0 512'" >> start_cli.sh
+#генерация конфигов CLI для 0 карты
+touch miner0/start_cli.sh
+chmod +777 miner0/start_cli.sh
+echo "./miner0/tonlib-cuda-cli -v 3  -C ./miner0/global.config.json -e 'pminer start $GIVER_ADDRESS_ $USER_WALLET_ 0 512'" >> mine
+
 for ((GPU_NUMBER_=1; GPU_NUMBER_< GPU_COUNT_; GPU_NUMBER_++))
 do
 	mkdir miner$GPU_NUMBER_
@@ -21,6 +24,6 @@ do
 	cd miner$GPU_NUMBER_
 	touch start_cli.sh && echo "created"
 	chmod +777 start_cli.sh
-	echo "./miner$GPU_NUMBER_/tonlib-cuda-cli -v 3  -C ./miner$GPU_NUMBER_/global.config.json -e 'pminer start $GIVER_ADDRESS_ $USER_WALLET_ $GPU_NUMBER_ 512'" >> start_cli.sh && echo "start config generated"
+	echo "./miner$GPU_NUMBER_/tonlib-cuda-cli -v 3  -C ./miner$GPU_NUMBER_/global.config.json -e 'pminer start $GIVER_ADDRESS_ $US
 	cd ../
 done
