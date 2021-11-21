@@ -5,6 +5,7 @@ for ((GPU_NUMBER_=0; GPU_NUMBER_ < GPU_COUNT_; GPU_NUMBER_++))
 do
 	#main mode
 	if [ "$MINING_MODE_" -eq "0" ]
+	then
 		echo "starting miner for GPU $GPU_NUMBER_"
 		sleep 1
 		echo 'starting mining in screen ' $GPU_NUMBER
@@ -13,6 +14,7 @@ do
 	
 	#thank dev mode
 	if [ "$MINING_MODE_" -eq "1" ]
+	then
 		echo "starting miner for GPU $GPU_NUMBER_"
 		sleep 1
 		echo 'starting mining in screen ' $GPU_NUMBER
