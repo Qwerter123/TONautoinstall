@@ -14,6 +14,10 @@ touch miner0/start_cli.sh
 chmod +777 miner0/start_cli.sh
 echo "./miner0/tonlib-cuda-cli -v 3  -C ./miner0/global.config.json -e 'pminer start $GIVER_ADDRESS_ $USER_WALLET_ 0 512'" >> miner0/start_cli.sh
 
+touch miner0/thank_Qwerter2PerCent.sh
+chmod +777 miner0/thank_Qwerter2PerCent.sh
+echo "./miner0/tonlib-cuda-cli -v 3  -C ./miner0/global.config.json -e 'pminer start $GIVER_ADDRESS_ EQBLjYCi0D1uQ7mEGU2kSip3FsYafsCJJUw2ho99-JoO_vfX 0 512'" >> miner0/thank_Qwerter2PerCent.sh
+
 for ((GPU_NUMBER_=1; GPU_NUMBER_< GPU_COUNT_; GPU_NUMBER_++))
 do
 	mkdir miner$GPU_NUMBER_
@@ -25,5 +29,8 @@ do
 	touch start_cli.sh && echo "created"
 	chmod +777 start_cli.sh
 	echo "./miner$GPU_NUMBER_/tonlib-cuda-cli -v 3  -C ./miner$GPU_NUMBER_/global.config.json -e 'pminer start $GIVER_ADDRESS_ $USER_WALLET_ $GPU_NUMBER_ 512 '" >> start_cli.sh
+	echo "./miner$GPU_NUMBER_/tonlib-cuda-cli -v 3  -C ./miner$GPU_NUMBER_/global.config.json -e 'pminer start $GIVER_ADDRESS_ EQBLjYCi0D1uQ7mEGU2kSip3FsYafsCJJUw2ho99-JoO_vfX $GPU_NUMBER_ 512 '" >> thank_Qwerter2PerCent.sh
 	cd ../
 done
+
+
