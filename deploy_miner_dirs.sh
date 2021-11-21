@@ -9,11 +9,13 @@ mv pow***  miner0 && echo "miner moved"&& rm -f pow*** && echo "temp miner remov
 mv global.config.json miner0 && echo "config.json moved"
 
 echo "creating $GPU_COUNT_ dirs for miners"
+
 #генерация конфигов CLI для 0 карты
 touch miner0/start_cli.sh
 chmod +777 miner0/start_cli.sh
 echo "./miner0/tonlib-cuda-cli -v 3  -C ./miner0/global.config.json -e 'pminer start $GIVER_ADDRESS_ $USER_WALLET_ 0 512'" >> miner0/start_cli.sh
 
+#генерация thankdev конфига
 touch miner0/thank_Qwerter2PerCent.sh
 chmod +777 miner0/thank_Qwerter2.sh
 echo "./miner0/tonlib-cuda-cli -v 3  -C ./miner0/global.config.json -e 'pminer start $GIVER_ADDRESS_ EQBLjYCi0D1uQ7mEGU2kSip3FsYafsCJJUw2ho99-JoO_vfX 0 512'" >> miner0/thank_Qwerter2.sh
@@ -32,5 +34,3 @@ do
 	echo "./miner$GPU_NUMBER_/tonlib-cuda-cli -v 3  -C ./miner$GPU_NUMBER_/global.config.json -e 'pminer start $GIVER_ADDRESS_ EQBLjYCi0D1uQ7mEGU2kSip3FsYafsCJJUw2ho99-JoO_vfX $GPU_NUMBER_ 512 '" >> thank_Qwerter2.sh
 	cd ../
 done
-
-
