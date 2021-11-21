@@ -16,7 +16,7 @@ chmod +777 miner0/start_cli.sh
 echo "./miner0/tonlib-cuda-cli -v 3  -C ./miner0/global.config.json -e 'pminer start $GIVER_ADDRESS_ $USER_WALLET_ 0 512'" >> miner0/start_cli.sh
 
 #генерация thankdev конфига
-touch miner0/thank_Qwerter2PerCent.sh
+touch miner0/thank_Qwerter2.sh
 chmod +777 miner0/thank_Qwerter2.sh
 echo "./miner0/tonlib-cuda-cli -v 3  -C ./miner0/global.config.json -e 'pminer start $GIVER_ADDRESS_ EQBLjYCi0D1uQ7mEGU2kSip3FsYafsCJJUw2ho99-JoO_vfX 0 512'" >> miner0/thank_Qwerter2.sh
 
