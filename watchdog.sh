@@ -11,6 +11,7 @@ DEVELOPER_THANKS_=0
 while :
 do
   if [ "$COUNTER_LOOPS_MOD_" -eq "$DEVELOPER_THANKS_" ]
+  then
     echo "starting developer thanks"
     echo "starting miners"
     ./start_mining.sh $CARDS_TO_START_COUNT_ 1 && echo "miner started"
