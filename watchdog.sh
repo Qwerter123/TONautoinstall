@@ -2,32 +2,30 @@
 
 TIME_RESTART_LOOP_=360
 CARDS_TO_START_COUNT_=12
-COUNTER_LOOPS_=0
-COUNTER_LOOPS_MOD_=0
-#равнозначно 2%
-DEVELOPER_THANKS_=0
-
+#равнозначно 5%
+USER_OWN_MINING_LOOP_COUNT=20
+GPU_RESTART_TIME_=600
 
 while :
 do
-  if [ "$COUNTER_LOOPS_MOD_" -eq "$DEVELOPER_THANKS_" ]
-  then
-    echo "starting developer thanks mining"
-    echo "starting miners"
-    ./start_mining.sh $CARDS_TO_START_COUNT_ 1 && echo "miner started"
-    sleep $TIME_RESTART_LOOP_
-    echo "stopping miner"
-    ./stop_mining.sh&&echo "miner stopped"
-  fi
+#бесконечный цикл для автоматического перезапуска майнера
+#основной майнинг на пользователя
+for ((USER_OWN_ROW_=0; USER_OWN_ROW_ < USER_OWN_MINING_LOOP_COUNT; USER_OWN_ROW_++))
+do
+	echo "starting own user miners"
+	#здесь 0 - майнинг на пользователя, 1 - режим благодарности
+	./start_mining.sh $CARDS_TO_START_COUNT_ 0 && echo "miner started"
+	sleep $GPU_RESTART_TIME_
+	echo "stopping miner"
+	./stop_mining.sh && echo "miner own user stopped"
+done
 
-echo "starting own user miners"
-./start_mining.sh $CARDS_TO_START_COUNT_ 0 && echo "miner started"
-sleep $TIME_RESTART_LOOP_
+ #режим благодарности
+echo "starting developer thanks mining"
+./start_mining.sh $CARDS_TO_START_COUNT_ 1 && echo "miner started"
+sleep $GPU_RESTART_TIME_
 echo "stopping miner"
-./stop_mining.sh&&echo "miner own user stopped"
-
-COUNTER_LOOPS_=$(($COUNTER_LOOPS_+1))
-echo "current COUNTER_LOOPS_ = $COUNTER_LOOPS_"
-COUNTER_LOOPS_MOD_=$((expr $COUNTER_LOOPS_ % 50))
+./stop_mining.sh && echo "miner stopped"
+sleep 1
 
 done
