@@ -2,7 +2,7 @@ GIVER_ADDRESS_=$1
 USER_WALLET_=$2
 GPU_COUNT_=$3
 DEVELOPER_WALLET_=EQDVwXI699aq287YkKAUpZGOyc1osydH6BFt6K7EgVUDim4P
-BOOT_FACTOR_=512
+BOOST_FACTOR_=512
 MINER_LINK_=https://github.com/tontechio/pow-miner-gpu/releases/download/20211116-1/minertools-cuda-ubuntu-18.04-x86-64.tar.gz
 #MINER_LINK_=https://github.com/tontechio/pow-miner-gpu/releases/download/20211119-4/minertools-opencl-ubuntu-18.04-x86-64.tar.gz
 
