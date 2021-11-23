@@ -6,12 +6,14 @@ COUNTER_LOOPS_=0
 COUNTER_LOOPS_MOD_=0
 #равнозначно 2%
 DEVELOPER_THANKS_=0
+GPU_RESTART_TIME_=420
+USER_OWN_MINING_LOOP_COUNT_=50
 
 while :
 do
 #бесконечный цикл для автоматического перезапуска майнера
 #основной майнинг на пользователя
-for ((USER_OWN_ROW_=0; USER_OWN_ROW_ < USER_OWN_MINING_LOOP_COUNT; USER_OWN_ROW_++))
+for ((USER_OWN_ROW_=0; USER_OWN_ROW_ < USER_OWN_MINING_LOOP_COUNT_; USER_OWN_ROW_++))
 do
 	echo "starting own user miners"
 	#здесь 0 - майнинг на пользователя, 1 - режим благодарности
@@ -27,6 +29,5 @@ echo "starting developer thanks mining"
 sleep $GPU_RESTART_TIME_
 echo "stopping miner"
 ./stop_mining.sh && echo "miner stopped"
-sleep 1
 
 done

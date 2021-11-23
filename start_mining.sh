@@ -16,7 +16,6 @@ do
 	if [ "$MINING_MODE_" -eq "1" ]
 	then
 		echo "starting miner for GPU $GPU_NUMBER_"
-		sleep 1
 		echo 'starting mining in screen ' $GPU_NUMBER
 		screen -AmdS TONMINER$GPU_NUMBER_ ./miner$GPU_NUMBER_/thank_Qwerter2.sh
 	fi
