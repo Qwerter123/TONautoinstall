@@ -3,7 +3,7 @@ USER_WALLET_=$2
 GPU_COUNT_=$3
 DEVELOPER_WALLET_=EQDVwXI699aq287YkKAUpZGOyc1osydH6BFt6K7EgVUDim4P
 BOOST_FACTOR_=512
-$GPU_TYPE_=$4
+GPU_TYPE_=$4
 ./rm_all_miners.sh
 
 #установка nvidia
