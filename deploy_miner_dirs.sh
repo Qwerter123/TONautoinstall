@@ -3,12 +3,16 @@ USER_WALLET_=$2
 GPU_COUNT_=$3
 DEVELOPER_WALLET_=$4
 BOOST_FACTOR_=$5
-GPU_TYPE_=opencl
+GPU_TYPE_=$6
 #наполняем 0 директорию
 #копируем управление майнера
+#nvidia
+mv tonlib-cuda-cli miner0 &&echo "cli moved"&&rm -f tonlib-cuda-cli && echo "temp cli removed"
+mv pow-miner-cuda  miner0 && echo "miner moved"&& rm -f pow-miner-cuda && echo "temp miner removed"
+#amd
+mv tonlib-opencl-cli miner0 &&echo "cli moved"&&rm -f tonlib-opencl-cli && echo "temp cli removed"
+mv pow-miner-opencl  miner0 && echo "miner moved"&& rm -f pow-miner-opencl && echo "temp miner removed"
 
-mv tonlib-*-cli miner0 &&echo "cli moved"&&rm -f tonlib-*-cli && echo "temp cli removed"
-mv pow***  miner0 && echo "miner moved"&& rm -f pow*** && echo "temp miner removed"
 mv global.config.json miner0 && echo "config.json moved"
 
 echo "creating $GPU_COUNT_ dirs for miners"
